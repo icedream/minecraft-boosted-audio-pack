@@ -50,6 +50,7 @@ get_asset_index() {
 }
 
 version="${1:-release}"
+pack_format="${PACK_FORMAT:-12}"
 sox_filter="${SOX_FILTER:-gain 100}"
 base_version_dir="versions/$version"
 assets_dir="$base_version_dir/assets"
@@ -119,7 +120,7 @@ then
 	install -m0644 pack.mcmeta "$target_dir/pack.mcmeta"
 else
 	# pack_format: https://minecraft.fandom.com/wiki/Pack_format
-	echo '{"pack":{"description":"The default Minecraft sounds but it'"'"'s BOOSTED.","pack_format":12}}' > "$target_dir/pack.mcmeta"
+	echo '{"pack":{"description":"The default Minecraft sounds but it'"'"'s BOOSTED.","pack_format":'"$PACK_FORMAT"'}}' > "$target_dir/pack.mcmeta"
 fi
 
 mkdir -vp resourcepacks
