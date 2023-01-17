@@ -1,7 +1,7 @@
 #!/bin/sh -e
 
 versions_json_url="https://launchermeta.mojang.com/mc/game/version_manifest.json"
-resources_url="http://resources.download.minecraft.net"
+resources_url="https://resources.download.minecraft.net"
 
 fetch() {
 	curl --fail -vsL "$@" || wget -v -O- "$@"
