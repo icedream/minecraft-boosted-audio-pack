@@ -81,7 +81,7 @@ done | aria2c --check-integrity --continue -x4 -i - --dir="$assets_dir" || (
 rm -f "$input_list"
 
 # Process each file
-first_file="$assets_dir/$(echo "$asset_index" | (read _ filepath _ && printf '%s' "$filepath"))"
+first_file="$processed_assets_dir/$(echo "$asset_index" | (read _ filepath _ && printf '%s' "$filepath"))"
 echo "$asset_index" | while read -r _ filepath
 do
 	if [ -z "$filepath" ]
