@@ -67,6 +67,10 @@ do
 	then
 		continue
 	fi
+	if [ -f "$assets_dir/$filepath" ]
+	then
+		continue
+	fi
 	echo "${resources_url}/$(printf '%s' "$filehash" | head -c2)/$filehash"
 	echo "  out=$filepath"
 done | aria2c --check-integrity --continue -x4 -i - --dir="$assets_dir" || (
