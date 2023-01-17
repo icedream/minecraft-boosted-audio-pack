@@ -118,7 +118,8 @@ if [ -f pack.mcmeta ]
 then
 	install -m0644 pack.mcmeta "$target_dir/pack.mcmeta"
 else
-	echo '{"pack":{"description":"The default Minecraft sounds but it'"'"'s BOOSTED.","pack_format":5}}' > "$target_dir/pack.mcmeta"
+	# pack_format: https://minecraft.fandom.com/wiki/Pack_format
+	echo '{"pack":{"description":"The default Minecraft sounds but it'"'"'s BOOSTED.","pack_format":12}}' > "$target_dir/pack.mcmeta"
 fi
 
 mkdir -vp resourcepacks
